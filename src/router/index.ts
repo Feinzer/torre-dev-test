@@ -10,6 +10,18 @@ const routes: Array<RouteConfig> = [
     name: 'Home',
     component: Home,
   },
+  {
+    path: '/user',
+    name: 'User',
+    component: () =>
+      import(/* webpackChunkName: "user-search" */ '../views/User.vue'),
+  },
+  {
+    path: '/job',
+    name: 'Job',
+    component: () =>
+      import(/* webpackChunkName: "job-search" */ '../views/Job.vue'),
+  },
 ]
 
 const router = new VueRouter({
