@@ -6,13 +6,13 @@ module.exports = {
       colors: {
         dark: {
           background: '#1b1b1b',
-          primary: '#313236',
+          primary: '#2c2c2c',
           accent: '#77ff85',
         },
         light: {
-          background: 'white',
-          primary: '#f5f5f5',
-          accent: '#3cff50',
+          background: '#f6f6f6',
+          primary: '#ffffff',
+          accent: '#22ff3c',
         },
       },
     },
@@ -20,6 +20,7 @@ module.exports = {
   variants: {
     extend: {
       scale: ['hover'],
+      borderWidth: ['dark']
     },
   },
   plugins: [],
