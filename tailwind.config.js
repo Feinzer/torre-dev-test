@@ -4,14 +4,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#1b1b1b',
-        secondary: '#313236',
-        accent: '#77ff85',
+        dark: {
+          background: '#1b1b1b',
+          primary: '#313236',
+          accent: '#77ff85',
+        },
+        light: {
+          background: 'white',
+          primary: '#f5f5f5',
+          accent: '#3cff50',
+        },
       },
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      scale: ['hover'],
+    },
   },
   plugins: [],
 }
