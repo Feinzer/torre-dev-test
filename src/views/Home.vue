@@ -1,6 +1,6 @@
 <template>
   <div
-    class="home flex flex-col h-full justify-center items-center pt-8 px-8 tracking-wide"
+    class="home h-full flex flex-col justify-center items-center pt-8 px-8 tracking-wide"
   >
     <p class="text-xl text-center font-mono pt-2 pb-8 sm:pb-4 md:pb-16">
       What are you looking for?
@@ -9,7 +9,7 @@
       <router-link
         v-for="link in links"
         :key="link.key"
-        class="flex flex-col justify-center py-8 md:py-16 bg-light-primary dark:bg-dark-primary overflow-hidden max-w-xs items-center w-full rounded-lg my-4 sm:mx-8 transform hover:scale-105 transition-transform duration-200"
+        class="flex flex-col justify-center py-8 md:py-16 bg-light-primary dark:bg-dark-primary overflow-hidden max-w-xs items-center w-full rounded-lg shadow my-4 sm:mx-8 transform hover:scale-105 transition-transform duration-200"
         :to="link.url"
       >
         <component :is="link.icon" class="w-1/4 mb-6 md:mb-12" />
