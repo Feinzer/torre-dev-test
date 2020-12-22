@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import Vue from 'vue'
+
 export default {
-  state: () => ({
-    filters: [{ value: 'full-time-employment' }],
-  }),
+  state: () => [],
   mutations: {
     addFilter: (state: any, data: any) => {
-      state.filters.push(data)
+      state.push(data)
     },
     updateFilter: (state: any, data: any) => {
-      state.filters[data.index] = data.filter
+      Vue.set(state, data.index, data.filter)
     },
   },
   actions: {
@@ -16,16 +16,14 @@ export default {
       commit('addFilter', data)
     },
     updateFilter: ({ commit, state }: any, data: any) => {
-      const index = state.filters.findIndex(
-        (filter: any) => filter.id == data.id,
-      )
+      const index = state.findIndex((filter: any) => filter.key == data.key)
       const filter = data
       commit('updateFilter', { index, filter })
     },
   },
   getters: {
     Filters: (state: any) => {
-      return state.filters
+      return state
     },
   },
 }
