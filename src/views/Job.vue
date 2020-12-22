@@ -21,7 +21,7 @@ export default Vue.extend({
 
 <template>
   <div class="h-full flex flex-col justify-center items-center">
-    <Stepper v-model="currentStep" :length="steps.length - 1">
+    <Stepper v-model="currentStep" :length="steps.length">
       <component
         v-for="(step, index) in steps"
         :key="index"
