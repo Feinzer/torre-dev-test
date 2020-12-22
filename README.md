@@ -33,6 +33,15 @@
 - 21/12/2020 19:00
   - Dinner break
 
+- 22/12/2020 9:00
+  - Fix styling issues on stepper
+
+- 22/12/2020 10:00
+  - Add vuex store
+
+- 22/12/2020 11:00
+  - Implement vuex store in stepper
+
 
 ### Project setup
 ```
