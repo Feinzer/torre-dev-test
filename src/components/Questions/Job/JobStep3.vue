@@ -2,7 +2,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'JobStep1',
+  name: 'JobStep3',
 })
 </script>
 

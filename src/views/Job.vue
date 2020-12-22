@@ -14,31 +14,18 @@ export default Vue.extend({
   },
   data: () => ({
     currentStep: 0,
-    steps: [
-      {
-        title: 'Type',
-        component: JobStep1,
-      },
-      {
-        title: 'Type',
-        component: JobStep2,
-      },
-      {
-        title: 'Type',
-        component: JobStep3,
-      },
-    ],
+    steps: [JobStep1, JobStep2, JobStep3],
   }),
 })
 </script>
 
 <template>
   <div class="h-full flex flex-col justify-center items-center">
-    <Stepper v-model="currentStep" :steps="steps.map(step => step.title)">
+    <Stepper v-model="currentStep" :length="steps.length - 1">
       <component
         v-for="(step, index) in steps"
         :key="index"
-        :is="step.component"
+        :is="step"
         v-show="currentStep === index"
       />
     </Stepper>
