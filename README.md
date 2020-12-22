@@ -17,6 +17,23 @@
   - Added home question
   - Added Job and User routes
 
+- 21/12/2020 15:00
+  - Small Break
+
+- 21/12/2020 16:00
+  - Small additions
+  - Styling fixes
+
+- 21/12/2020 17:00
+  - Start custom stepper
+
+- 21/12/2020 18:00
+  - Finish custom stepper
+
+- 21/12/2020 19:00
+  - Dinner break
+
+
 ### Project setup
 ```
 yarn install
