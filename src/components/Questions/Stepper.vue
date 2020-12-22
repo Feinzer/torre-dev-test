@@ -45,7 +45,7 @@ export default Vue.extend({
       class="flex flex-row w-full justify-center md:justify-around items-center py-5 max-h-20 lg:mb-20"
     >
       <div
-        class="bg-light-primary w-24 dark:bg-dark-primary mr-2 select-none flex justify-center items-center h-10 text-xs font-bold uppercase rounded-lg shadow-lg transition-all duration-150"
+        class="bg-light-primary w-24 dark:bg-dark-primary mr-2 select-none flex justify-center items-center h-10 text-xs font-bold uppercase rounded-lg shadow-md transition-all duration-150"
         :class="
           value == 0
             ? 'shadow-none cursor-default bg-light-background text-dark-background dark:text-white text-opacity-10'
@@ -57,7 +57,7 @@ export default Vue.extend({
         Previous
       </div>
       <div
-        class="bg-light-primary w-24 dark:bg-dark-primary mr-2 select-none flex justify-center items-center h-10 text-xs font-bold uppercase rounded-lg shadow-lg transition-all duration-150"
+        class="bg-light-primary w-24 dark:bg-dark-primary mr-2 select-none flex justify-center items-center h-10 text-xs font-bold uppercase rounded-lg shadow-md transition-all duration-150"
         :class="
           value == length - 1
             ? 'shadow-none cursor-default bg-light-background text-dark-background dark:text-white text-opacity-10'

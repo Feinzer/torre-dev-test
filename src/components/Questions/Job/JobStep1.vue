@@ -42,7 +42,7 @@ export default Vue.extend({
       {{ question }}
     </p>
     <div
-      class="flex flex-col sm:flex-row justify-center mt-6 md:mt-8 lg:mt-32 items-center w-full px-8 md:px-0"
+      class="flex flex-col sm:flex-row justify-center items-center w-full px-8 md:px-0 flex-grow max-h-72"
     >
       <div
         v-for="answer in answers"
