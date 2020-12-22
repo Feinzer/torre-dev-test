@@ -2,7 +2,7 @@
   <div
     class="home h-full flex flex-col justify-center items-center pt-8 px-8 tracking-wide"
   >
-    <p class="text-xl text-center font-mono pt-2 pb-8 sm:pb-4 md:pb-16">
+    <p class="text-xl text-center pt-2 pb-8 sm:pb-4 md:pb-16">
       What are you looking for?
     </p>
     <div class="flex flex-col sm:flex-row justify-center items-center w-full">
@@ -13,7 +13,7 @@
         :to="link.url"
       >
         <component :is="link.icon" class="w-1/4 mb-6 md:mb-12" />
-        <p class="font-mono text-lg">
+        <p class="text-lg">
           {{ link.title }}
         </p>
       </router-link>

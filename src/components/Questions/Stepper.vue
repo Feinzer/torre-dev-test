@@ -7,8 +7,8 @@ export default Vue.extend({
       type: Number,
       required: true,
     },
-    steps: {
-      type: Array,
+    length: {
+      type: Number,
       required: true,
     },
   },
@@ -28,17 +28,20 @@ export default Vue.extend({
 
 <template>
   <div
-    class="flex flex-col h-2/3 justify-between w-full md:w-2/3"
+    class="flex flex-col h-full py-10 sm:pb-4 justify-center w-full md:w-5/6"
     :style="
-      `--direction: ${value < oldIndex ? '-50%' : '50%'};
-      --direction-alt: ${value < oldIndex ? '50%' : '-50%'};`
+      `--direction: ${value < oldIndex ? '-5rem' : '5rem'};
+      --direction-alt: ${value < oldIndex ? '5rem' : '-5rem'};`
     "
   >
-    <transition-group name="step" class="flex justify-center overflow-y-auto">
+    <transition-group
+      name="step"
+      class="flex justify-center overflow-y-auto overflow-x-hidden h-full relative"
+    >
       <slot />
     </transition-group>
     <div
-      class="flex flex-row w-full justify-center md:justify-around items-center py-5 max-h-20"
+      class="flex flex-row w-full justify-center md:justify-around items-center py-5 max-h-20 lg:mb-20"
     >
       <div
         class="bg-light-primary w-24 dark:bg-dark-primary mr-2 select-none flex justify-center items-center h-10 text-xs font-bold uppercase rounded-lg shadow-lg transition-all duration-150"
@@ -55,12 +58,12 @@ export default Vue.extend({
       <div
         class="bg-light-primary w-24 dark:bg-dark-primary mr-2 select-none flex justify-center items-center h-10 text-xs font-bold uppercase rounded-lg shadow-lg transition-all duration-150"
         :class="
-          value == steps.length - 1
+          value == length - 1
             ? 'shadow-none cursor-default bg-light-background text-dark-background dark:text-white text-opacity-10'
             : 'cursor-pointer'
         "
-        @click="value != steps.length - 1 && update(value + 1)"
-        :disabled="value == steps.length - 1"
+        @click="value != length - 1 && update(value + 1)"
+        :disabled="value == length - 1"
       >
         Next
       </div>

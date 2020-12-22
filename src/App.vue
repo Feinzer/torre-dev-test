@@ -9,17 +9,19 @@ export default Vue.extend({
 <template>
   <div
     id="app"
-    class="flex flex-col h-screen bg-light-background dark:bg-dark-background text-dark-primary dark:text-white"
+    class="flex flex-col h-screen bg-light-background dark:bg-dark-background text-dark-primary dark:text-white font-mono"
   >
     <transition name="load" type="out-in">
       <router-view class="h-full w-full pb-10" />
     </transition>
-    <router-link
-      to="/about"
-      class="text-dark-primary dark:text-dark-accent text-center pb-8 absolute bottom-0 w-full"
-    >
-      About
-    </router-link>
+    <div class="absolute w-full bottom-0 flex items-center justify-center">
+      <router-link
+        to="/about"
+        class="text-dark-primary dark:text-dark-accent pb-8"
+      >
+        About
+      </router-link>
+    </div>
   </div>
 </template>
 
