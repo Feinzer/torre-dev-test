@@ -43,7 +43,7 @@ export default Vue.extend({
       <div
         class="bg-light-primary w-24 dark:bg-dark-primary mr-2 select-none flex justify-center items-center h-10 text-xs font-bold uppercase rounded-lg shadow-lg transition-all duration-150"
         :class="
-          value == 0 
+          value == 0
             ? 'shadow-none cursor-default bg-light-background text-dark-background dark:text-white text-opacity-10'
             : 'cursor-pointer'
         "
@@ -55,7 +55,7 @@ export default Vue.extend({
       <div
         class="bg-light-primary w-24 dark:bg-dark-primary mr-2 select-none flex justify-center items-center h-10 text-xs font-bold uppercase rounded-lg shadow-lg transition-all duration-150"
         :class="
-          value == steps.length - 1 
+          value == steps.length - 1
             ? 'shadow-none cursor-default bg-light-background text-dark-background dark:text-white text-opacity-10'
             : 'cursor-pointer'
         "
