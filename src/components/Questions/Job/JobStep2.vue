@@ -52,7 +52,7 @@ export default Vue.extend({
             skill.key.toLowerCase().includes(this.searchText.toLowerCase()) ||
             skill.title.toLowerCase().includes(this.searchText.toLowerCase()),
         )
-      else return []
+      else return this.skills
     },
     selectedSkills(): any {
       if (this.Filters[1] && this.Filters[1].value) return this.Filters[1].value
@@ -71,14 +71,12 @@ export default Vue.extend({
     </p>
     <div
       class="w-full md:w-1/2 flex flex-col justify-between mt-4 lg:mt-12 relative"
-      :class="
-        searchText && searchResults.length > 0 && focusedText && 'shadow-md'
-      "
+      :class="searchResults.length > 0 && focusedText && 'shadow-md'"
     >
       <div
         class="w-full flex flex-row justify-between px-4 py-3 z-20 bg-light-primary dark:bg-dark-primary"
         :class="
-          searchText && searchResults.length > 0 && focusedText
+          searchResults.length > 0 && focusedText
             ? 'rounded-t-lg'
             : ' rounded-lg shadow-md'
         "
@@ -104,7 +102,7 @@ export default Vue.extend({
         </svg>
       </div>
       <div
-        v-show="searchText && focusedText"
+        v-show="focusedText"
         class="absolute w-full mt-12 bg-light-primary dark:bg-dark-primary flex flex-col rounded-b-lg shadow-md z-10 max-h-20 lg:max-h-48 overflow-y-auto"
       >
         <div
