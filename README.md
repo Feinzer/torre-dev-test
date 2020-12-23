@@ -67,6 +67,27 @@
   - Add deployment script
   - Fix responsiveness issues
 
+- 23/12/2020 9:00
+  - Start step 3
+  - Start custom select component
+
+- 23/12/2020 10:00
+  - Remove hardcoded values and make it dynamic
+
+- 23/12/2020 11:00
+  - Expand searchbar as much as possible for better mobile experience
+
+- 23/12/2020 12:00
+  - Lunch
+
+- 23/12/2020 13:00
+  - Finish CustomSelect component
+
+- 23/12/2020 14:00
+  - Finish step 3
+
+- 23/12/2020 15:00
+  - Fix placeholder for CustomSelect component
 
 ### Project setup
 ```
