@@ -63,6 +63,10 @@
 - 22/12/2020 19:00
   - Fix responsiveness and structure
 
+- 22/12/2020 22:00
+  - Add deployment script
+  - Fix responsiveness issues
+
 
 ### Project setup
 ```
