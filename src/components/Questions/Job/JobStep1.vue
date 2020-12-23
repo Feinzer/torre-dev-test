@@ -42,16 +42,16 @@ export default Vue.extend({
       {{ question }}
     </p>
     <div
-      class="flex flex-col sm:flex-row justify-center items-center w-full px-8 md:px-0 flex-grow max-h-72"
+      class="flex flex-col sm:flex-row justify-center items-center w-full px-8 md:px-0 flex-grow max-h-96"
     >
       <div
         v-for="answer in answers"
         :key="answer.key"
-        class="flex flex-col cursor-pointer justify-center w-full sm:w-48 h-24 sm:h-32 lg:py-16 bg-light-primary dark:bg-dark-primary overflow-hidden items-center rounded-lg shadow my-4 sm:my-0 sm:mx-4 lg:mx-8 transform transition-transform duration-200"
+        class="flex flex-col cursor-pointer justify-center w-full sm:w-48 h-24 sm:h-32 lg:py-16 overflow-hidden items-center rounded-lg shadow my-4 sm:my-0 sm:mx-4 lg:mx-8 transform transition-all duration-200"
         :class="
           Filters[0] && Filters[0].value == answer.key
-            ? 'border-2 border-light-accent dark:border-dark-accent'
-            : 'hover:scale-105'
+            ? 'bg-accent text-dark-background'
+            : 'bg-light-primary dark:bg-dark-primary hover:scale-105'
         "
         @click="selectFilter(answer.key)"
       >

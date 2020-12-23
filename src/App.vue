@@ -15,10 +15,7 @@ export default Vue.extend({
       <router-view class="h-full w-full pb-10" />
     </transition>
     <div class="absolute w-full bottom-0 flex items-center justify-center">
-      <router-link
-        to="/about"
-        class="text-dark-primary dark:text-dark-accent pb-8"
-      >
+      <router-link to="/about" class="text-dark-primary dark:text-accent pb-8">
         About
       </router-link>
     </div>

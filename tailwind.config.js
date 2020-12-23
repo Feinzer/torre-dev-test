@@ -7,20 +7,21 @@ module.exports = {
         dark: {
           background: '#1b1b1b',
           primary: '#2c2c2c',
-          accent: '#77ff85',
         },
         light: {
           background: '#f6f6f6',
           primary: '#ffffff',
-          accent: '#22ff3c',
         },
+        accent: '#77ff85',
       },
     },
   },
   variants: {
     extend: {
-      scale: ['hover'],
-      borderWidth: ['dark']
+      scale: ['hover', 'group-hover'],
+      borderWidth: ['dark'],
+      borderRadius: ['last'],
+      backgroundOpacity: ['dark']
     },
   },
   plugins: [],
