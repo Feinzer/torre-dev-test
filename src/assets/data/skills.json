@@ -1,0 +1,178 @@
+[
+  {
+    "key": "frontend",
+    "title": "Frontend Development"
+  },
+  {
+    "key": "backend",
+    "title": "Backend Development"
+  },
+  {
+    "key": "fullstack",
+    "title": "Full Stack Development"
+  },
+  {
+    "key": "vuejs",
+    "title": "Vue.js"
+  },
+  {
+    "key": "reactjs",
+    "title": "ReactJS"
+  },
+  {
+    "key": "angular",
+    "title": "Angular"
+  },
+  {
+    "key": "tailwindcss",
+    "title": "TailwindCSS"
+  },
+  {
+    "key": "rest",
+    "title": "REST"
+  },
+  {
+    "key": "graphql",
+    "title": "GraphQL"
+  },
+  {
+    "key": "sqldb",
+    "title": "SQL Database"
+  },
+  {
+    "key": "mondodb",
+    "title": "MongoDB"
+  },
+  {
+    "key": "faunadb",
+    "title": "FaunaDB"
+  },
+  {
+    "key": "nodejs",
+    "title": "NodeJS"
+  },
+  {
+    "key": "expressjs",
+    "title": "Express.js"
+  },
+  {
+    "key": "bootstrap",
+    "title": "Bootstrap"
+  },
+  {
+    "key": "c",
+    "title": "C Programming Language"
+  },
+  {
+    "key": "cpp",
+    "title": "C++ Programming Language"
+  },
+  {
+    "key": "csharp",
+    "title": "C# Programming Language"
+  },
+  {
+    "key": "dotnet",
+    "title": ".NET Framework"
+  },
+  {
+    "key": "dotnetcore",
+    "title": ".NET Core Framework"
+  },
+  {
+    "key": "java",
+    "title": "Java Programming Language"
+  },
+  {
+    "key": "javascript",
+    "title": "Javascript Programming Language"
+  },
+  {
+    "key": "python",
+    "title": "Python Programming Language"
+  },
+  {
+    "key": "ruby",
+    "title": "Ruby Programming Language"
+  },
+  {
+    "key": "golang",
+    "title": "Go Programming Language"
+  },
+  {
+    "key": "laravel",
+    "title": "Laravel Framework"
+  },
+  {
+    "key": "rust",
+    "title": "Rust Programming Language"
+  },
+  {
+    "key": "wordpress",
+    "title": "Wordpress"
+  },
+  {
+    "key": "django",
+    "title": "Djando Framework"
+  },
+  {
+    "key": "nuxt",
+    "title": "Nuxt Framework"
+  },
+  {
+    "key": "next",
+    "title": "Next Framework"
+  },
+  {
+    "key": "php",
+    "title": "PHP Programming Language"
+  },
+  {
+    "key": "flutter",
+    "title": "Flutter Framework"
+  },
+  {
+    "key": "reactnative",
+    "title": "React Native Framework"
+  },
+  {
+    "key": "Kotlin",
+    "title": "Kotlin Programming Framework"
+  },
+  {
+    "key": "linux",
+    "title": "Linux Kernel"
+  },
+  {
+    "key": "android",
+    "title": "Android Development"
+  },
+  {
+    "key": "ios",
+    "title": "iOS Development"
+  },
+  {
+    "key": "unity",
+    "title": "Unity Game Engine"
+  },
+  {
+    "key": "Godot",
+    "title": "Godot Game Engine"
+  },
+  {
+    "key": "ue4",
+    "title": "Unreal Engine 4"
+  },
+  {
+    "key": "ssr",
+    "title": "Server Side Rendering"
+  },
+  {
+    "key": "ssg",
+    "title": "Static Site Generation"
+  },
+  {
+    "key": "spa",
+    "title": "Single Page Application"
+  }
+]

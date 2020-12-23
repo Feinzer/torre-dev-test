@@ -2,11 +2,12 @@
 import Vue from 'vue'
 import { mapActions, mapGetters } from 'vuex'
 
+import skills from '@/assets/data/skills.json'
 export default Vue.extend({
   name: 'JobStep2',
   data: () => ({
     question: 'What skills do you consider your strengths?',
-    skills: [],
+    skills,
   }),
   methods: {
     ...mapActions(['addFilter', 'updateFilter']),
