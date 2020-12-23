@@ -71,17 +71,17 @@ export default Vue.extend({
 
 <template>
   <div
-    class="absolute flex flex-col justify-center items-center right-0 left-0 bottom-0 top-0 px-8"
+    class="absolute flex flex-col justify-center items-center right-0 left-0 bottom-0 top-0 mx-8"
   >
     <p class="text-xl text-center">
       {{ question }}
     </p>
     <div
-      class="w-full md:w-1/2 flex flex-col justify-between mt-4 lg:mt-12 relative"
+      class="w-full md:w-1/2 flex flex-col justify-between mt-4 lg:mt-12"
       :class="searchResults.length > 0 && focusedText && 'shadow-md'"
     >
       <div
-        class="w-full flex flex-row justify-between px-4 py-3 z-20 bg-light-primary dark:bg-dark-primary"
+        class="w-full flex flex-row justify-between px-4 py-3 z-30 bg-light-primary dark:bg-dark-primary"
         :class="
           searchResults.length > 0 && focusedText
             ? 'rounded-t-lg'
@@ -110,7 +110,7 @@ export default Vue.extend({
       </div>
       <div
         v-show="focusedText"
-        class="absolute w-full mt-12 bg-light-primary dark:bg-dark-primary flex flex-col rounded-b-lg shadow-md z-10 max-h-20 lg:max-h-48 overflow-y-auto"
+        class="absolute w-full mx-auto md:w-1/2 mt-12 bg-light-primary dark:bg-dark-primary flex flex-col rounded-b-lg shadow-md h-1/2 overflow-y-auto z-20"
       >
         <div
           v-for="skill in searchResults"
@@ -129,7 +129,7 @@ export default Vue.extend({
       <div
         v-for="skill in selectedSkills"
         :key="skill.key"
-        class="flex skill-item justify-between items-center w-full sm:w-40 whitespace-nowrap bg-accent px-4 py-1 shadow mt-3 sm:mx-2 text-dark-background rounded-full group cursor-pointer transition-all duration-300"
+        class="flex skill-item justify-between items-center w-full sm:w-40 whitespace-nowrap bg-accent px-4 py-1 shadow mt-3 sm:mx-2 text-dark-background rounded-full group cursor-pointer transition-all duration-300 z-10"
         @click="removeSkill(skill)"
       >
         <p class="w-9/12 pt-1 truncate ... overflow-ellipsis">
@@ -156,5 +156,8 @@ export default Vue.extend({
 .skills-enter-active,
 .skills-leave-active {
   opacity: 0;
+  transform: scale(85%);
+  position: absolute;
+  z-index: 0;
 }
 </style>
