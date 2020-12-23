@@ -84,7 +84,6 @@ export default Vue.extend({
 .cselect-leave-active {
   transition-property: all;
   transition-duration: 200ms;
-  transform-origin: top;
 }
 .cselect-enter,
 .cselect-leave-active {

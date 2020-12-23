@@ -77,16 +77,10 @@ export default Vue.extend({
       {{ question }}
     </p>
     <div
-      class="w-full md:w-1/2 flex flex-col justify-between mt-4 lg:mt-12"
-      :class="searchResults.length > 0 && focusedText && 'shadow-md'"
+      class="w-full md:w-1/2 flex flex-col justify-between mt-4 lg:mt-12 shadow-md"
     >
       <div
-        class="w-full flex flex-row justify-between px-4 py-3 z-30 bg-light-primary dark:bg-dark-primary"
-        :class="
-          searchResults.length > 0 && focusedText
-            ? 'rounded-t-lg'
-            : ' rounded-lg shadow-md'
-        "
+        class="w-full flex flex-row justify-between px-4 py-3 z-30 bg-light-primary dark:bg-dark-primary rounded-lg"
       >
         <input
           v-model="searchText"
@@ -108,19 +102,21 @@ export default Vue.extend({
           ></path>
         </svg>
       </div>
-      <div
-        v-show="focusedText"
-        class="absolute w-full mx-auto md:w-1/2 mt-12 bg-light-primary dark:bg-dark-primary flex flex-col rounded-b-lg shadow-md h-1/2 overflow-y-auto z-20"
-      >
+      <transition name="dropdown">
         <div
-          v-for="skill in searchResults"
-          :key="skill.key"
-          class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-black dark:hover:bg-opacity-10 select-none last:rounded-b-lg cursor-pointer"
-          @click="addSkill(skill)"
+          v-show="focusedText"
+          class="absolute w-full mx-auto md:w-1/2 mt-10 pt-2 bg-light-primary dark:bg-dark-primary flex flex-col rounded-b-lg shadow-md h-1/2 overflow-y-auto z-20"
         >
-          {{ skill.title }}
+          <div
+            v-for="skill in searchResults"
+            :key="skill.key"
+            class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-black dark:hover:bg-opacity-10 select-none last:rounded-b-lg cursor-pointer"
+            @click="addSkill(skill)"
+          >
+            {{ skill.title }}
+          </div>
         </div>
-      </div>
+      </transition>
     </div>
     <transition-group
       name="skills"
@@ -159,5 +155,16 @@ export default Vue.extend({
   transform: scale(85%);
   position: absolute;
   z-index: 0;
+}
+
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition-property: all;
+  transition-duration: 200ms;
+}
+.dropdown-enter,
+.dropdown-leave-active {
+  opacity: 0;
+  transform: translateY(-2rem);
 }
 </style>
