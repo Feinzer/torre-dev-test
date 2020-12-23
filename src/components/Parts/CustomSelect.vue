@@ -43,7 +43,17 @@ export default Vue.extend({
       @blur="toggleOpen(false)"
       class="flex flex-row justify-between bg-light-primary dark:bg-dark-primary py-3 px-4 z-10 select-none rounded-lg"
     >
-      <p>{{ value ? value[label] : placeholder }}</p>
+      <p>
+        {{
+          value
+            ? label
+              ? value[label]
+                ? value[label]
+                : placeholder
+              : value
+            : placeholder
+        }}
+      </p>
       <svg
         class="w-6 h-6 transform transition-transform duration-100"
         :class="opened && '-rotate-180'"

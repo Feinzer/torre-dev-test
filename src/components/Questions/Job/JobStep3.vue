@@ -139,7 +139,7 @@ export default Vue.extend({
       />
       <div class="flex flex-row justify-center items-center">
         <p class="mr-6 w-16 text-right">{{ inputSalary }}</p>
-        <CustomSelect label="title" v-model="inputPeriod" v-slot="cselect">
+        <CustomSelect placeholder="Period" label="title" v-model="inputPeriod" v-slot="cselect">
           <div
             v-for="period in periods"
             :key="period.key"
