@@ -86,7 +86,7 @@ export default Vue.extend({
         <input
           v-model="searchText"
           type="text"
-          class="min-w-0 bg-transparent flex-grow"
+          class="min-w-0 bg-transparent flex-grow outline-none"
           @focus="toggleFocus(true)"
           @blur="toggleFocus(false)"
         />

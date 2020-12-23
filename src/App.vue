@@ -9,13 +9,13 @@ export default Vue.extend({
 <template>
   <div
     id="app"
-    class="flex flex-col h-screen bg-light-background dark:bg-dark-background text-dark-primary dark:text-white font-mono"
+    class="flex flex-col justify-end h-screen bg-light-background dark:bg-dark-background text-dark-primary dark:text-white font-mono"
   >
     <transition name="load" type="out-in">
-      <router-view class="h-full w-full pb-10" />
+      <router-view class="absolute h-full w-full pb-10" />
     </transition>
-    <div class="absolute w-full bottom-0 flex items-center justify-center">
-      <router-link to="/about" class="text-dark-primary dark:text-accent pb-8">
+    <div class="w-full flex items-center justify-center">
+      <router-link to="/about" class="text-dark-primary dark:text-accent pb-4">
         About
       </router-link>
     </div>
@@ -25,7 +25,6 @@ export default Vue.extend({
 <style>
 .load-enter-active,
 .load-leave-active {
-  position: absolute;
   transition-property: all;
   transition-duration: 100ms;
 }
