@@ -129,10 +129,10 @@ export default Vue.extend({
       <div
         v-for="skill in selectedSkills"
         :key="skill.key"
-        class="flex skill-item justify-between items-center w-full sm:w-40 whitespace-nowrap bg-accent px-4 py-1 shadow mt-3 sm:mx-2 text-dark-background rounded-full group cursor-pointer transition-all duration-300 z-10"
+        class="flex skill-item justify-between items-center w-full sm:w-40 whitespace-nowrap bg-accent px-4 py-2 shadow mt-3 sm:mx-2 text-dark-background rounded-full group cursor-pointer transition-all duration-300 z-10"
         @click="removeSkill(skill)"
       >
-        <p class="w-9/12 pt-1 truncate ... overflow-ellipsis">
+        <p class="w-9/12 truncate ... overflow-ellipsis">
           {{ skill.title }}
         </p>
         <svg

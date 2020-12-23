@@ -29,7 +29,7 @@ export default Vue.extend({
 
 <template>
   <div
-    class="flex flex-col h-full py-10 sm:pb-4 justify-center w-full md:w-5/6"
+    class="flex flex-col h-full sm:pb-4 justify-center w-full md:w-5/6 pt-1"
     :style="
       `--direction: ${value < oldIndex ? '-5rem' : '5rem'};
       --direction-alt: ${value < oldIndex ? '5rem' : '-5rem'};`
