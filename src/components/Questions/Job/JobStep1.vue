@@ -1,10 +1,12 @@
 <script lang="ts">
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Vue from 'vue'
 import { mapActions, mapGetters } from 'vuex'
 
 export default Vue.extend({
   name: 'JobStep1',
   data: () => ({
+    key: 'type',
     question: 'What kind of job are you interested in?',
     answers: [
       {
@@ -24,12 +26,19 @@ export default Vue.extend({
   methods: {
     ...mapActions(['addFilter', 'updateFilter']),
     selectFilter(value: string) {
-      if (this.Filters[0]) this.updateFilter({ key: 'type', value })
-      else this.addFilter({ key: 'type', value })
+      if (this.selectedType) this.updateFilter({ key: this.key, value })
+      else this.addFilter({ key: this.key, value })
     },
   },
   computed: {
     ...mapGetters(['Filters']),
+    selectedType(): any {
+      const index = this.Filters.findIndex(
+        (filter: any) => filter.key == this.key,
+      )
+      if (index >= 0) return this.Filters[index]
+      else return undefined
+    },
   },
 })
 </script>
@@ -49,7 +58,7 @@ export default Vue.extend({
         :key="answer.key"
         class="flex flex-col cursor-pointer justify-center w-full sm:w-48 h-24 sm:h-32 lg:py-16 overflow-hidden items-center rounded-lg shadow my-4 sm:my-0 sm:mx-4 lg:mx-8 transform transition-all duration-200"
         :class="
-          Filters[0] && Filters[0].value == answer.key
+          selectedType && selectedType.value == answer.key
             ? 'bg-accent text-dark-background'
             : 'bg-light-primary dark:bg-dark-primary hover:scale-105'
         "

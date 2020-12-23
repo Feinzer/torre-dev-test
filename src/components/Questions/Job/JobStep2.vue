@@ -8,6 +8,7 @@ import skills from '@/assets/data/skills.json'
 export default Vue.extend({
   name: 'JobStep2',
   data: () => ({
+    key: 'skills',
     question: 'What skills do you consider your strengths?',
     searchText: '',
     focusedText: false,
@@ -16,15 +17,18 @@ export default Vue.extend({
   methods: {
     ...mapActions(['addFilter', 'updateFilter']),
     selectFilter(data: any) {
-      if (this.Filters[1])
+      if (this.selectedSkills)
         this.updateFilter({
-          key: 'skills',
+          key: this.key,
           value: [...data],
         })
-      else this.addFilter({ key: 'skills', value: [...data] })
+      else this.addFilter({ key: this.key, value: [...data] })
     },
     addSkill(data: any) {
-      if (!this.selectedSkills.find((skill: any) => skill.key == data.key)) {
+      if (
+        !this.selectedSkills ||
+        !this.selectedSkills.find((skill: any) => skill.key == data.key)
+      ) {
         const filter = this.selectedSkills || []
         filter.push(data)
         this.selectFilter(filter)
@@ -55,8 +59,11 @@ export default Vue.extend({
       else return this.skills
     },
     selectedSkills(): any {
-      if (this.Filters[1] && this.Filters[1].value) return this.Filters[1].value
-      else return []
+      const index = this.Filters.findIndex(
+        (filter: any) => filter.key == this.key,
+      )
+      if (index >= 0) return this.Filters[index].value
+      else return undefined
     },
   },
 })
@@ -146,11 +153,8 @@ export default Vue.extend({
 </template>
 
 <style scoped>
-.skills-enter-active {
-  opacity: 0;
-}
-
-.skills-leave-to {
+.skills-enter-active,
+.skills-leave-active {
   opacity: 0;
 }
 </style>
