@@ -148,7 +148,7 @@ export default Vue.extend({
           <div
             v-for="period in periods"
             :key="period.key"
-            class="py-3 px-4 hover:bg-gray-100 dark:hover:bg-black dark:hover:bg-opacity-10 select-none"
+            class="py-3 px-4 hover:bg-gray-100 dark:hover:bg-black dark:hover:bg-opacity-10 select-none last:rounded-b-lg"
             @click="cselect.select(period)"
           >
             {{ period.title }}

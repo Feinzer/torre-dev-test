@@ -21,7 +21,7 @@ module.exports = {
       scale: ['hover', 'group-hover'],
       borderWidth: ['dark'],
       borderRadius: ['last'],
-      backgroundOpacity: ['dark']
+      backgroundOpacity: ['dark'],
     },
   },
   plugins: [],

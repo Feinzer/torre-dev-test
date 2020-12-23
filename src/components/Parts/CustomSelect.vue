@@ -86,10 +86,7 @@ export default Vue.extend({
   transition-duration: 200ms;
   transform-origin: top;
 }
-.cselect-enter {
-  opacity: 0;
-  transform: translateY(-2rem);
-}
+.cselect-enter,
 .cselect-leave-active {
   opacity: 0;
   transform: translateY(-2rem);
