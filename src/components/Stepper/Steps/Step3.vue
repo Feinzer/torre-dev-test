@@ -50,6 +50,7 @@ export default Vue.extend({
       if (this.currentFilter.period)
         this.inputSalary = this.currentFilter.salary
     }
+    this.setSalary()
   },
   methods: {
     ...mapActions(['addFilter', 'updateFilter']),
