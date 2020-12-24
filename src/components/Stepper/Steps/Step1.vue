@@ -10,23 +10,26 @@ export default Vue.extend({
       type: String,
       required: true,
     },
+    answers: {
+      type: Array,
+      default: () => [
+        {
+          key: 'freelance-gigs',
+          title: 'Freelance',
+        },
+        {
+          key: 'full-time-employment',
+          title: 'Full time',
+        },
+        {
+          key: 'part-time-employment',
+          title: 'Part time',
+        },
+      ],
+    },
   },
   data: () => ({
     key: 'type',
-    answers: [
-      {
-        key: 'freelance-gigs',
-        title: 'Freelance',
-      },
-      {
-        key: 'full-time-employment',
-        title: 'Full time',
-      },
-      {
-        key: 'part-time-employment',
-        title: 'Part time',
-      },
-    ],
   }),
   methods: {
     ...mapActions(['addFilter', 'updateFilter']),
@@ -69,7 +72,7 @@ export default Vue.extend({
         "
         @click="selectFilter(answer.key)"
       >
-        <p class="text-lg">
+        <p class="text-lg text-center">
           {{ answer.title }}
         </p>
       </div>
