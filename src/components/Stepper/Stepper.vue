@@ -1,5 +1,6 @@
 <script lang="ts">
 import Vue from 'vue'
+import { mapGetters } from 'vuex'
 
 export default Vue.extend({
   name: 'Steps',
@@ -25,6 +26,12 @@ export default Vue.extend({
     },
     finish() {
       this.$emit('finish')
+    },
+  },
+  computed: {
+    ...mapGetters(['Filters']),
+    Completed(): boolean {
+      return this.Filters.length == 4
     },
   },
 })
@@ -60,13 +67,15 @@ export default Vue.extend({
         Previous
       </div>
       <div
-        class=" w-24 mr-2 select-none flex justify-center items-center h-10 text-xs font-bold uppercase rounded-lg shadow-md transition-all duration-150 cursor-pointer"
+        class="w-24 mr-2 select-none flex justify-center items-center h-10 text-xs font-bold uppercase rounded-lg shadow-md transition-all duration-150"
         :class="
-          value == length - 1
-            ? 'bg-accent text-dark-primary'
-            : 'bg-light-primary dark:bg-dark-primary'
+          value != length - 1
+            ? 'bg-light-primary dark:bg-dark-primary cursor-pointer'
+            : Completed
+            ? 'bg-accent text-dark-primary cursor-pointer'
+            : 'shadow-none cursor-default bg-light-primary dark:bg-dark-primary text-dark-background dark:text-white text-opacity-10'
         "
-        @click="value != length - 1 ? update(value + 1) : finish()"
+        @click="value != length - 1 ? update(value + 1) : Completed && finish()"
       >
         {{ value == length - 1 ? 'Finish' : 'Next' }}
       </div>

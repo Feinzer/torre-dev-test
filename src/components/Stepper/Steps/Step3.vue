@@ -19,8 +19,8 @@ export default Vue.extend({
   data: () => ({
     key: 'salary',
     inputPeriod: {
-      key: '',
-      title: '',
+      key: 'hourly',
+      title: '$/hour',
     },
     inputSalary: 0,
     salaryRange: {},
@@ -57,12 +57,8 @@ export default Vue.extend({
     },
     setSalary() {
       const filter = this.currentFilter || {}
+      filter.period = this.inputPeriod
       filter.salary = this.inputSalary
-      this.selectFilter(filter)
-    },
-    setPeriod() {
-      const filter = this.currentFilter || {}
-      filter.period = this.inputPeriod.key
       this.selectFilter(filter)
     },
   },
@@ -118,7 +114,7 @@ export default Vue.extend({
           : this.inputSalary < range.min
           ? range.min
           : this.inputSalary
-      this.setPeriod()
+      this.setSalary()
     },
     inputSalary() {
       this.setSalary()
