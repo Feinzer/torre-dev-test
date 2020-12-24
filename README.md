@@ -124,6 +124,9 @@
   - Add loading view
   - Add no results view
   - Fix some minor details
+  
+- 24/12/2020 08:00
+  - Fix some issues in mobile view
 
 ### Project setup
 ```
