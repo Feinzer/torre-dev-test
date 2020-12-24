@@ -1,0 +1,1 @@
+:root{--tw-bg-opacity:1;background-color:rgba(246,246,246,var(--tw-bg-opacity))}@media (prefers-color-scheme:dark){:root{--tw-bg-opacity:1;background-color:rgba(27,27,27,var(--tw-bg-opacity))}}.load-enter-active,.load-leave-active{transition-property:all;transition-duration:.1s}.load-enter{opacity:0}.load-enter-active{transition-delay:.1s}.load-leave-active{opacity:0}
