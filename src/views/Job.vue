@@ -1,12 +1,12 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import Stepper from '@/components/Questions/Stepper.vue'
+import Stepper from '@/components/Stepper/Stepper.vue'
 
-import JobStep1 from '@/components/Questions/Job/JobStep1.vue'
-import JobStep2 from '@/components/Questions/Job/JobStep2.vue'
-import JobStep3 from '@/components/Questions/Job/JobStep3.vue'
-import JobStep4 from '@/components/Questions/Job/JobStep4.vue'
+import Step1 from '@/components/Stepper/Steps/Step1.vue'
+import Step2 from '@/components/Stepper/Steps/Step2.vue'
+import Step3 from '@/components/Stepper/Steps/Step3.vue'
+import Step4 from '@/components/Stepper/Steps/Step4.vue'
 
 export default Vue.extend({
   name: 'JobSearch',
@@ -15,7 +15,24 @@ export default Vue.extend({
   },
   data: () => ({
     currentStep: 0,
-    steps: [JobStep1, JobStep2, JobStep3, JobStep4],
+    steps: [
+      {
+        question: 'What kind of job are you interested in?',
+        component: Step1,
+      },
+      {
+        question: 'What skills do you consider your strengths?',
+        component: Step2,
+      },
+      {
+        question: 'What is your salary expectation?',
+        component: Step3,
+      },
+      {
+        question: 'From where are you available to work?',
+        component: Step4,
+      },
+    ],
   }),
 })
 </script>
@@ -26,7 +43,8 @@ export default Vue.extend({
       <component
         v-for="(step, index) in steps"
         :key="index"
-        :is="step"
+        :is="step.component"
+        :question="step.question"
         v-show="currentStep === index"
       />
     </Stepper>

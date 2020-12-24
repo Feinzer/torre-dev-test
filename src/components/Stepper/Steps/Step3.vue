@@ -10,9 +10,14 @@ export default Vue.extend({
   components: {
     CustomSelect,
   },
+  props: {
+    question: {
+      type: String,
+      required: true,
+    },
+  },
   data: () => ({
     key: 'salary',
-    question: 'What is your salary expectation?',
     inputPeriod: {
       key: '',
       title: '',

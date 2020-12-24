@@ -7,9 +7,14 @@ import skills from '@/assets/data/skills.json'
 
 export default Vue.extend({
   name: 'JobStep2',
+  props: {
+    question: {
+      type: String,
+      required: true,
+    },
+  },
   data: () => ({
     key: 'skills',
-    question: 'What skills do you consider your strengths?',
     searchText: '',
     focusedText: false,
     skills,

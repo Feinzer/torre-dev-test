@@ -5,9 +5,14 @@ import { mapActions, mapGetters } from 'vuex'
 
 export default Vue.extend({
   name: 'JobStep1',
+  props: {
+    question: {
+      type: String,
+      required: true,
+    },
+  },
   data: () => ({
     key: 'type',
-    question: 'What kind of job are you interested in?',
     answers: [
       {
         key: 'freelance-gigs',

@@ -11,9 +11,14 @@ export default Vue.extend({
   components: {
     CustomSelect,
   },
+  props: {
+    question: {
+      type: String,
+      required: true,
+    },
+  },
   data: () => ({
     key: 'location',
-    question: 'From where are you available to work?',
     filter: {
       country: { id: '', name: '' },
       state: { id: '', name: '' },
