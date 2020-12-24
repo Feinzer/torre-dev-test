@@ -139,7 +139,7 @@ export default Vue.extend({
       <a
         v-for="result in searchResults"
         :key="result.id"
-        class="flex flex-row h-64 mb-10 bg-light-primary dark:bg-dark-primary shadow-md rounded-lg thumbnail-outer"
+        class="flex flex-col sm:flex-row sm:h-64 mb-10 bg-light-primary dark:bg-dark-primary shadow-md rounded-lg thumbnail-outer"
         :href="
           SearchType == searchTypes.JOB
             ? `https://torre.co/jobs/${result.id}`
@@ -148,17 +148,17 @@ export default Vue.extend({
       >
         <div
           v-show="SearchType == searchTypes.USER"
-          class="w-5/12 h-64 md:h-full overflow-hidden rounded-l-lg max-w-sm"
+          class="w-full sm:w-5/12 h-64 sm:h-full overflow-hidden rounded-t-lg sm:rounded-t-none sm:rounded-l-lg sm:max-w-sm"
         >
           <div
             :style="
               `background-image: url(${result.picture ||
                 require('@/assets/images/nophoto.png')})`
             "
-            class="thumbnail h-full transition-transform duration-300 ease-out bg-no-repeat bg-cover bg-center"
+            class="thumbnail w-full h-full transition-transform duration-300 ease-out bg-no-repeat bg-cover bg-center"
           />
         </div>
-        <div class="flex flex-col py-7 justify-between flex-grow w-7/12">
+        <div class="flex flex-col py-7 justify-between flex-grow sm:w-7/12">
           <div class="flex flex-col px-6">
             <div class="mb-3 flex flex-row justify-between">
               <p class="">{{ result[mappedKeys.title] }}</p>
@@ -181,12 +181,15 @@ export default Vue.extend({
                     d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
                   ></path>
                 </svg>
+                <p class="pt-0.5 pl-2 lg:hidden">Remote</p>
               </div>
             </div>
             <p class="mb-3">{{ mappedJobType(result) }}</p>
             <p class="text-sm">{{ mappedLocation(result) }}</p>
           </div>
-          <div class="pl-4 py-2 flex flex-row overflow-hidden w-full">
+          <div
+            class="pl-4 py-2 flex flex-row overflow-hidden w-full mt-6 md:mt-0 overflow-x-auto"
+          >
             <div
               v-for="skill in result.skills"
               :key="skill.name"
