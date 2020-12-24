@@ -41,8 +41,10 @@ export default Vue.extend({
   }),
   mounted() {
     if (this.currentFilter) {
-      this.inputPeriod = this.currentPeriod
-      this.inputSalary = this.currentSalary
+      if (this.currentFilter.period)
+        this.inputPeriod = this.currentFilter.period
+      if (this.currentFilter.period)
+        this.inputSalary = this.currentFilter.salary
     }
   },
   methods: {
@@ -70,21 +72,6 @@ export default Vue.extend({
       )
       if (index >= 0) return this.Filters[index].value
       else return undefined
-    },
-    currentSalary(): any {
-      if (this.currentFilter.salary) return this.currentFilter.salary
-      else return 0
-    },
-    currentPeriod(): any {
-      if (this.currentFilter.period)
-        return this.periods.find(
-          (period: any) => period.key == this.currentFilter.period,
-        )
-      else
-        return {
-          key: 'hourly',
-          title: '$/hour',
-        }
     },
   },
   watch: {
