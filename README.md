@@ -120,6 +120,11 @@
 - 24/12/2020 05:00
   - Finish results view
 
+- 24/12/2020 06:00
+  - Add loading view
+  - Add no results view
+  - Fix some minor details
+
 ### Project setup
 ```
 yarn install
