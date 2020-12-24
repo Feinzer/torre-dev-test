@@ -1,9 +1,9 @@
 <script lang="ts">
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Vue from 'vue'
+import { mapActions, mapGetters } from 'vuex'
 
 import CustomSelect from '@/components/Parts/CustomSelect.vue'
-import { mapActions, mapGetters } from 'vuex'
 
 export default Vue.extend({
   name: 'JobStep3',
@@ -105,10 +105,13 @@ export default Vue.extend({
           step: 500,
         },
       }
-      this.salaryRange = ranges[newPeriod.key]
+      const range = ranges[newPeriod.key]
+      this.salaryRange = range
       this.inputSalary =
-        this.inputSalary > ranges[newPeriod.key].max
-          ? ranges[newPeriod.key].max
+        this.inputSalary > range.max
+          ? range.max
+          : this.inputSalary < range.min
+          ? range.min
           : this.inputSalary
       this.setPeriod()
     },
@@ -144,6 +147,7 @@ export default Vue.extend({
           label="title"
           v-model="inputPeriod"
           v-slot="cselect"
+          class="w-36"
         >
           <div
             v-for="period in periods"

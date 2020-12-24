@@ -23,6 +23,9 @@ export default Vue.extend({
       this.oldIndex = this.value
       this.$emit('input', index)
     },
+    finish() {
+      this.$emit('finish')
+    },
   },
 })
 </script>
@@ -57,16 +60,15 @@ export default Vue.extend({
         Previous
       </div>
       <div
-        class="bg-light-primary w-24 dark:bg-dark-primary mr-2 select-none flex justify-center items-center h-10 text-xs font-bold uppercase rounded-lg shadow-md transition-all duration-150"
+        class=" w-24 mr-2 select-none flex justify-center items-center h-10 text-xs font-bold uppercase rounded-lg shadow-md transition-all duration-150 cursor-pointer"
         :class="
           value == length - 1
-            ? 'shadow-none cursor-default bg-light-background text-dark-background dark:text-white text-opacity-10'
-            : 'cursor-pointer'
+            ? 'bg-accent text-dark-primary'
+            : 'bg-light-primary dark:bg-dark-primary'
         "
-        @click="value != length - 1 && update(value + 1)"
-        :disabled="value == length - 1"
+        @click="value != length - 1 ? update(value + 1) : finish()"
       >
-        Next
+        {{ value == length - 1 ? 'Finish' : 'Next' }}
       </div>
     </div>
   </div>
