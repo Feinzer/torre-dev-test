@@ -37,7 +37,6 @@ export default Vue.extend({
         const filter = this.selectedSkills || []
         filter.push(data)
         this.selectFilter(filter)
-        this.searchText = ''
       }
     },
     removeSkill(data: any) {
@@ -49,6 +48,9 @@ export default Vue.extend({
     toggleFocus(value: boolean) {
       setTimeout(() => {
         this.focusedText = value
+        setTimeout(() => {
+          this.searchText = ''
+        }, 200)
       }, 150)
     },
   },
@@ -110,7 +112,7 @@ export default Vue.extend({
       <transition name="dropdown">
         <div
           v-show="focusedText"
-          class="absolute w-full mx-auto md:w-1/2 mt-10 pt-2 bg-light-primary dark:bg-dark-primary flex flex-col rounded-b-lg shadow-md h-1/2 overflow-y-auto z-20"
+          class="absolute w-full mx-auto md:w-1/2 mt-10 pt-2 bg-light-primary dark:bg-dark-primary flex flex-col rounded-b-lg shadow-md max-h-half overflow-y-auto z-20"
         >
           <div
             v-for="skill in searchResults"
@@ -171,5 +173,9 @@ export default Vue.extend({
 .dropdown-leave-active {
   opacity: 0;
   transform: translateY(-2rem);
+}
+
+.max-h-half {
+  max-height: 50%;
 }
 </style>
