@@ -11,6 +11,7 @@
         :key="link.key"
         class="flex flex-col justify-center py-8 md:py-16 bg-light-primary dark:bg-dark-primary overflow-hidden max-w-xs items-center w-full rounded-lg shadow my-4 sm:mx-8 transform hover:scale-105 transition-transform duration-200"
         :to="link.url"
+        @click.native="SetSearchType(link.type)"
       >
         <component :is="link.icon" class="w-1/4 mb-6 md:mb-12" />
         <p class="text-lg">
@@ -23,9 +24,12 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapActions } from 'vuex'
 
 import EmployeeIcon from '@/components/Icons/Employee.vue'
 import JobIcon from '@/components/Icons/Job.vue'
+
+import { SEARCH_TYPE } from '@/types/types'
 
 export default Vue.extend({
   name: 'Home',
@@ -35,15 +39,20 @@ export default Vue.extend({
         key: 'link#0',
         title: 'A Job!',
         url: '/job',
+        type: SEARCH_TYPE.JOB,
         icon: JobIcon,
       },
       {
         key: 'link#1',
         title: 'An Employee!',
         url: '/user',
+        type: SEARCH_TYPE.USER,
         icon: EmployeeIcon,
       },
     ],
   }),
+  methods: {
+    ...mapActions(['SetSearchType']),
+  },
 })
 </script>
