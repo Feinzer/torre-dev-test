@@ -18,20 +18,6 @@ export default Vue.extend({
     steps: [
       {
         question: 'Who are you looking to employ?',
-        answers: [
-          {
-            key: 'freelance-gigs',
-            title: 'Freelancer',
-          },
-          {
-            key: 'full-time-employment',
-            title: 'Full time employee',
-          },
-          {
-            key: 'part-time-employment',
-            title: 'Part time employee',
-          },
-        ],
         component: Step1,
       },
       {
@@ -48,18 +34,22 @@ export default Vue.extend({
       },
     ],
   }),
+  methods: {
+    onFinish() {
+      this.$router.push('/results')
+    },
+  },
 })
 </script>
 
 <template>
   <div class="h-full flex flex-col justify-center items-center">
-    <Stepper v-model="currentStep" :length="steps.length">
+    <Stepper v-model="currentStep" :length="steps.length" @finish="onFinish">
       <component
         v-for="(step, index) in steps"
         :key="index"
         :is="step.component"
         :question="step.question"
-        :answers="step.answers"
         v-show="currentStep === index"
       />
     </Stepper>

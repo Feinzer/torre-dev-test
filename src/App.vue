@@ -9,12 +9,15 @@ export default Vue.extend({
 <template>
   <div
     id="app"
-    class="flex flex-col justify-end h-screen bg-light-background dark:bg-dark-background text-dark-primary dark:text-white font-mono"
+    class="flex flex-col justify-end min-h-screen text-dark-primary dark:text-white font-mono overflow-hidden"
   >
-    <transition name="load" type="out-in">
-      <router-view class="absolute h-full w-full pb-10" />
+    <transition name="load">
+      <router-view class="absolute h-full w-full pb-10 overflow-hidden" />
     </transition>
-    <div class="w-full flex items-center justify-center">
+    <div
+      v-if="$route.path != '/results'"
+      class="w-full flex items-center justify-center"
+    >
       <router-link to="/about" class="text-dark-primary dark:text-accent pb-4">
         About
       </router-link>
@@ -23,6 +26,11 @@ export default Vue.extend({
 </template>
 
 <style>
+:root {
+  @apply bg-light-background;
+  @apply dark:bg-dark-background;
+}
+
 .load-enter-active,
 .load-leave-active {
   transition-property: all;
