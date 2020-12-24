@@ -6,6 +6,7 @@ import Stepper from '@/components/Questions/Stepper.vue'
 import JobStep1 from '@/components/Questions/Job/JobStep1.vue'
 import JobStep2 from '@/components/Questions/Job/JobStep2.vue'
 import JobStep3 from '@/components/Questions/Job/JobStep3.vue'
+import JobStep4 from '@/components/Questions/Job/JobStep4.vue'
 
 export default Vue.extend({
   name: 'JobSearch',
@@ -14,7 +15,7 @@ export default Vue.extend({
   },
   data: () => ({
     currentStep: 0,
-    steps: [JobStep1, JobStep2, JobStep3],
+    steps: [JobStep1, JobStep2, JobStep3, JobStep4],
   }),
 })
 </script>

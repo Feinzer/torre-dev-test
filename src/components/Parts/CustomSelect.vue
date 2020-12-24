@@ -36,7 +36,7 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="flex flex-col w-36 relative shadow-md rounded-lg">
+  <div class="flex flex-col relative shadow-md rounded-lg">
     <div
       tabindex="10"
       @click="toggleOpen(!opened)"
@@ -70,7 +70,7 @@ export default Vue.extend({
     </div>
     <transition name="cselect">
       <div
-        class="absolute w-full mt-10 pt-2 bg-light-primary dark:bg-dark-primary rounded-b-lg z-0 shadow-md"
+        class="absolute w-full mt-10 pt-2 bg-light-primary dark:bg-dark-primary rounded-b-lg z-0 shadow-md max-h-48 overflow-y-auto"
         v-show="opened"
       >
         <slot :select="selectObject" />

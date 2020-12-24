@@ -13,6 +13,7 @@
     "autoprefixer": "^9",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "country-state-city": "^1.0.5",
     "dotenv": "^8.2.0",
     "fs-extra": "^9.0.1",
     "postcss": "^7",
