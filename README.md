@@ -103,6 +103,23 @@
 - 24/12/2020 00:00
   - Back to it
 
+- 24/12/2020 01:00
+  - Start results view
+  - Prevent finishing unless all questions has been answered
+
+- 24/12/2020 02:00
+  - Rework some type logic
+
+- 24/12/2020 03:00
+  - Add initial results page
+
+- 24/12/2020 04:00
+  - Fix animation on search bar results
+  - Fix data loading from vuex on step 3
+
+- 24/12/2020 05:00
+  - Finish results view
+
 ### Project setup
 ```
 yarn install
