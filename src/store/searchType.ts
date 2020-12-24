@@ -9,7 +9,7 @@ export default {
     },
   },
   actions: {
-    setSearchType: ({ commit }: any, data: SEARCH_TYPE) => {
+    SetSearchType: ({ commit }: any, data: SEARCH_TYPE) => {
       commit('SET_TYPE', data)
     },
   },
