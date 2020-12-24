@@ -9,7 +9,8 @@ import { SEARCH_TYPE, JOB_TYPES } from '@/types/types'
 export default Vue.extend({
   name: 'ResultsView',
   data: () => ({
-    searchResults: [],
+    loading: true,
+    searchResults: undefined,
     searchTypes: SEARCH_TYPE,
   }),
   async mounted() {
@@ -66,7 +67,7 @@ export default Vue.extend({
         and: [...data],
       })
       .then((response: any) => {
-        console.log(response)
+        self.loading = false
         self.searchResults = response.data.results
       })
   },
@@ -106,8 +107,35 @@ export default Vue.extend({
 
 <template>
   <div class="flex flex-col w-full h-full items-center pb-12 overflow-y-auto">
-    <p class="my-16 text-2xl">Your results!</p>
-    <div class="flex flex-col w-full md:w-2/3 px-2">
+    <p v-if="!loading && searchResults.length > 0" class="my-16 text-2xl">
+      Your results!
+    </p>
+    <div v-if="loading" class="flex h-full justify-center items-center">
+      <svg
+        class="animate-spin h-12 w-12"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <circle
+          class="text-light-background dark:text-dark-background"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          stroke-width="4"
+        ></circle>
+        <path
+          class="text-accent"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+        ></path>
+      </svg>
+    </div>
+    <div
+      v-else-if="searchResults.length > 0"
+      class="flex flex-col w-full md:w-2/3 px-2"
+    >
       <a
         v-for="result in searchResults"
         :key="result.id"
@@ -170,6 +198,11 @@ export default Vue.extend({
           </div>
         </div>
       </a>
+    </div>
+    <div v-else class="flex flex-col w-full h-full p-10 lg:p-12 lg:px-16">
+      <p class="font-sans text-9xl">:(</p>
+      <p class="my-16 text-2xl">You got no results</p>
+      <p class="my-16 text-center">Go back and select different options</p>
     </div>
   </div>
 </template>
