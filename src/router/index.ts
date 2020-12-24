@@ -22,6 +22,12 @@ const routes: Array<RouteConfig> = [
     component: () =>
       import(/* webpackChunkName: "job-search" */ '../views/Job.vue'),
   },
+  {
+    path: '/results',
+    name: 'Results',
+    component: () =>
+      import(/* webpackChunkName: "search-results" */ '../views/Results.vue'),
+  },
 ]
 
 const router = new VueRouter({

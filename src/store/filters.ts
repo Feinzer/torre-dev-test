@@ -25,5 +25,10 @@ export default {
     Filters: (state: any) => {
       return state
     },
+    GetFilter: (state: any) => (key: string) => {
+      const index = state.findIndex((filter: any) => filter.key == key)
+      if (index > -1) return state[index].value
+      else return undefined
+    },
   },
 }

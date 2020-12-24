@@ -34,12 +34,17 @@ export default Vue.extend({
       },
     ],
   }),
+  methods: {
+    onFinish() {
+      this.$router.push('/results')
+    },
+  },
 })
 </script>
 
 <template>
   <div class="h-full flex flex-col justify-center items-center">
-    <Stepper v-model="currentStep" :length="steps.length">
+    <Stepper v-model="currentStep" :length="steps.length" @finish="onFinish">
       <component
         v-for="(step, index) in steps"
         :key="index"
