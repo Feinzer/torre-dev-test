@@ -1,6 +1,6 @@
-export enum SEARCH_TYPE {
-  JOB,
-  USER,
+export const SEARCH_TYPE = {
+  JOB: 'JOB',
+  USER: 'USER',
 }
 
 export const JOB_TYPES = [
