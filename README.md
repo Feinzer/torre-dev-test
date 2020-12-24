@@ -89,6 +89,20 @@
 - 23/12/2020 15:00
   - Fix placeholder for CustomSelect component
 
+- 23/12/2020 16:00
+  - Start step 4
+  - Make animations consistent across some components
+
+- 23/12/2020 17:00
+  - Finish step 4
+  - Add country state and cities list selector
+
+- 23/12/2020 18:00
+  - Power outage
+
+- 24/12/2020 00:00
+  - Back to it
+
 ### Project setup
 ```
 yarn install
