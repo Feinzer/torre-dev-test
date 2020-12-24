@@ -22,7 +22,7 @@ export default Vue.extend({
       key: 'hourly',
       title: '$/hour',
     },
-    inputSalary: 0,
+    inputSalary: 5,
     salaryRange: {},
     periods: [
       {
