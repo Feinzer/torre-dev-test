@@ -167,6 +167,9 @@ input[type='range']::-webkit-slider-runnable-track {
   @apply w-full;
   @apply cursor-pointer;
   @apply bg-accent;
+  @apply h-2;
+  @apply rounded-full;
+  @apply shadow-md;
 }
 input[type='range']::-webkit-slider-thumb {
   @apply h-5;
@@ -174,7 +177,9 @@ input[type='range']::-webkit-slider-thumb {
   @apply rounded-full;
   @apply bg-light-primary;
   @apply cursor-pointer;
+  @apply shadow-md;
   -webkit-appearance: none;
+  @apply -mt-1.5;
 }
 input[type='range']:focus::-webkit-slider-runnable-track {
   @apply bg-accent;
@@ -185,6 +190,7 @@ input[type='range']::-moz-range-track {
   @apply cursor-pointer;
   @apply bg-accent;
   @apply rounded-full;
+  @apply shadow-md;
 }
 input[type='range']::-moz-range-thumb {
   @apply h-5;
@@ -192,11 +198,16 @@ input[type='range']::-moz-range-thumb {
   @apply rounded-full;
   @apply bg-light-primary;
   @apply cursor-pointer;
+  @apply shadow-md;
+  @apply border-0;
 }
 input[type='range']::-ms-track {
   @apply w-full;
   @apply h-2;
   @apply cursor-pointer;
+  @apply bg-accent;
+  @apply rounded-full;
+  @apply shadow-md;
 }
 input[type='range']::-ms-fill-lower {
   @apply bg-accent;
@@ -212,6 +223,8 @@ input[type='range']::-ms-thumb {
   @apply rounded-full;
   @apply bg-light-primary;
   @apply cursor-pointer;
+  @apply shadow-md;
+  @apply border-0;
 }
 input[type='range']:focus::-ms-fill-lower {
   @apply bg-accent;
