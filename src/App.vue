@@ -14,14 +14,6 @@ export default Vue.extend({
     <transition name="load">
       <router-view class="absolute h-full w-full pb-10 overflow-hidden" />
     </transition>
-    <div
-      v-if="$route.path != '/results'"
-      class="w-full flex items-center justify-center"
-    >
-      <router-link to="/about" class="text-dark-primary dark:text-accent pb-4">
-        About
-      </router-link>
-    </div>
   </div>
 </template>
 
